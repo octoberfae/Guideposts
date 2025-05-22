@@ -1,25 +1,90 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9;
-  color: #222;
-}
-
-.section {
-  padding: 60px 20px;
+  font-family: 'Georgia', serif;
+  background-color: #0b1020;
+  color: #fff;
   text-align: center;
 }
 
-.deck-title span {
-  font-size: 3em;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0;
+.hero {
+  padding: 60px 20px;
 }
 
-.deck-title small {
-  font-size: 2em;
-  font-weight: normal;
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #fff;
+}
+
+.hero h1 small {
+  font-size: 1.6em;
   display: block;
-  margin-top: -10px;
+  margin-top: -0.4em;
+}
+
+.cards {
+  position: relative;
+  margin: 50px auto;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%) scale(1.1);
+  z-index: 5;
+}
+
+.left1 {
+  left: 35%;
+  transform: rotate(-15deg);
+  z-index: 3;
+}
+
+.left2 {
+  left: 20%;
+  transform: rotate(-25deg);
+  z-index: 2;
+}
+
+.right1 {
+  left: 65%;
+  transform: rotate(15deg);
+  z-index: 3;
+}
+
+.right2 {
+  left: 80%;
+  transform: rotate(25deg);
+  z-index: 2;
+}
+
+.intro {
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: white;
+  color: #0b1020;
 }

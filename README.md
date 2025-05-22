@@ -1,4 +1,5 @@
-# Guideposts: Let's GO!
-This is the starting point for the 'Guideposts: Let's GO!' traveling tarot deck website.
+# Guideposts: Let's GO! - Digital Library Card Tracker
 
-Stay tuned for more updates and interactive features.
+A traveling tarot deck project designed to gather reflections and insights from readers around the world.
+
+Visit: https://octoberfae.github.io/Guideposts/

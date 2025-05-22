@@ -1,1 +1,1 @@
-console.log("Welcome to Guideposts!");
+console.log("Digital Library Card Tracker loaded.");
