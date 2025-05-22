@@ -1,1 +1,25 @@
-/* CSS content placeholder */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #222;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.deck-title span {
+  font-size: 3em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0;
+}
+
+.deck-title small {
+  font-size: 2em;
+  font-weight: normal;
+  display: block;
+  margin-top: -10px;
+}

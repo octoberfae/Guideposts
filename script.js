@@ -1,1 +1,1 @@
-// JS content placeholder
+console.log("Welcome to Guideposts!");
