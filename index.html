@@ -2,14 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guideposts: Let’s GO!</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <script>
+    function navigateTo(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+      }
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #0b1222;
+      color: #f5f0e1;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    .hero-title h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero-title h2 {
+      font-size: 2rem;
+      font-weight: normal;
+      margin: 0.2em 0 1em 0;
+    }
+    .cards {
+      width: 80%;
+      max-width: 500px;
+      margin: 30px auto;
+      display: block;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .button {
+      display: inline-block;
+      text-align: center;
+      background: none;
+      border: 2px solid #f5f0e1;
+      color: #f5f0e1;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      min-width: 220px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background: #f5f0e1;
+      color: #0b1222;
+      box-shadow: 0 0 12px #f5f0e1aa;
+      transform: scale(1.05);
+    }
+    .map-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .map-image {
+      max-width: 90%;
+      width: 500px;
+      border: 2px solid #f5f0e1;
+      border-radius: 10px;
+    }
+    .description {
+      max-width: 600px;
+      margin: 30px auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .testimonial {
+      margin-top: 40px;
+      padding: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonial-photo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #f5f0e1;
+      margin-bottom: 15px;
+    }
+    .testimonial blockquote {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 auto;
+    }
+    .reader-name {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-
-<!-- START PASTED HTML CONTENT -->
 
 <!-- HOME SECTION -->
 <div id="home" class="section active">
@@ -30,17 +143,38 @@
   </div>
 </div>
 
-<!-- Additional Sections (Track, Cards, About, etc.) -->
-<!-- Note: Truncated here for space but full content was previously provided and would be included -->
-
-<!-- About Section -->
-<div id="about" class="section">
-  <h1>About This Project</h1>
-  <p>This digital companion was created to accompany a traveling tarot deck, offering a way for readers to record their reflections and follow the deck's path. It is a living, evolving story written by everyone it touches.</p>
+<!-- TRACK SECTION -->
+<div id="track" class="section">
+  <h1>Track the Deck</h1>
+  <p class="subtitle">A traveling tarot deck on a journey<br>from reader to reader</p>
+  <div class="map-container">
+    <img src="https://i.imgur.com/wUpPfCE.png" alt="Map showing Phoenix and route" class="map-image" />
+  </div>
+  <button class="button">View Its Journey</button>
+  <p class="description">
+    Guideposts is a single physical deck of tarot cards, passed from one set of hands to another.
+    Each recipient spends time with the cards, then sends the deck on its way.
+    Follow the route, and explore the stories it gathers along the way.
+  </p>
+  <div class="testimonial">
+    <img src="https://i.imgur.com/5zOaj8M.png" alt="Reader Photo" class="testimonial-photo" />
+    <blockquote>
+      “I was surprised how emotional I felt holding the deck. Each card felt alive with purpose,
+      like it had more to say the longer I listened.”<br><br>
+      <span class="reader-name">– Ashleigh R., Oregon</span>
+    </blockquote>
+  </div>
   <button class="button" onclick="navigateTo('home')">Back</button>
 </div>
 
-<!-- Reader Pages Section -->
+<!-- CARDS SECTION -->
+<div id="cards" class="section">
+  <h1>Behind the Cards</h1>
+  <p class="subtitle">Explore the symbolism and creative spirit of each design.</p>
+  <button class="button" onclick="navigateTo('home')">Back</button>
+</div>
+
+<!-- READERS SECTION -->
 <div id="readers" class="section">
   <h1>Reader Pages</h1>
   <p class="subtitle">
@@ -48,7 +182,8 @@
     Each journey leaves a mark — here’s where they’re shared.
   </p>
   <p class="description">
-    The Digital Library Card Tracker follows the path of our physical decks — from one reader to the next. On these pages, readers leave notes, stories, reflections, and synchronicities. Whether you’re just beginning or handing off the deck to the next soul, this is where your voice joins the chorus.
+    The Digital Library Card Tracker follows the path of our physical decks — from one reader to the next.
+    On these pages, readers leave notes, stories, reflections, and synchronicities.
   </p>
   <p class="description">
     Each card read. Each hand held. Each insight shared.<br>
@@ -57,7 +192,14 @@
   <button class="button" onclick="navigateTo('home')">Back</button>
 </div>
 
-<!-- END PASTED HTML CONTENT -->
+<!-- ABOUT SECTION -->
+<div id="about" class="section">
+  <h1>About This Project</h1>
+  <p>
+    This digital companion was created to accompany a traveling tarot deck, offering a way for readers to record their reflections and follow the deck's path. It is a living, evolving story written by everyone it touches.
+  </p>
+  <button class="button" onclick="navigateTo('home')">Back</button>
+</div>
 
 </body>
 </html>
