@@ -1,90 +1,210 @@
+/* === Global Styles === */
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background-color: #0b1020;
-  color: #fff;
+  background: #0b1222;
+  color: #f5f0e1;
   text-align: center;
-}
-
-.hero {
   padding: 60px 20px;
 }
 
-.hero h1 {
-  font-size: 3em;
-  margin: 0;
-  color: #fff;
+.section {
+  display: none;
 }
 
-.hero h1 small {
-  font-size: 1.6em;
+.section.active {
   display: block;
-  margin-top: -0.4em;
 }
 
-.cards {
-  position: relative;
-  margin: 50px auto;
-  height: 400px;
+/* === Hero Title === */
+.hero-title h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 
-.card {
-  position: absolute;
-  height: 100%;
-  transition: transform 0.3s ease;
+.hero-title h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0.2em 0 1em 0;
 }
 
-.center {
-  left: 50%;
-  transform: translateX(-50%) scale(1.1);
-  z-index: 5;
+/* === Homepage Elements === */
+.hero .cards {
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: block;
 }
 
-.left1 {
-  left: 35%;
-  transform: rotate(-15deg);
-  z-index: 3;
-}
-
-.left2 {
-  left: 20%;
-  transform: rotate(-25deg);
-  z-index: 2;
-}
-
-.right1 {
-  left: 65%;
-  transform: rotate(15deg);
-  z-index: 3;
-}
-
-.right2 {
-  left: 80%;
-  transform: rotate(25deg);
-  z-index: 2;
-}
-
-.intro {
-  font-size: 1.1em;
-  margin-top: 20px;
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.4;
 }
 
 .buttons {
-  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-button {
+/* === Button Style === */
+.button,
+button,
+a.button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
   background: none;
-  color: white;
-  border: 1px solid white;
-  padding: 10px 20px;
-  margin: 10px;
+  border: 2px solid #f5f0e1;
+  color: #f5f0e1;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1em;
-  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 220px;
+  margin-top: 20px;
 }
 
-button:hover {
-  background: white;
-  color: #0b1020;
+.button:hover,
+button:hover,
+a.button:hover {
+  background: #f5f0e1;
+  color: #0b1222;
+  box-shadow: 0 0 12px #f5f0e1aa;
+  transform: scale(1.05);
+}
+
+/* === Card Layout === */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.card-image {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.card-info {
+  max-width: 500px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.card-info h2 {
+  margin-top: 24px;
+  font-size: 1.2rem;
+}
+
+.card-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* === Track the Deck Section === */
+.map-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.map-image {
+  max-width: 90%;
+  width: 500px;
+  border: 2px solid #f5f0e1;
+  border-radius: 10px;
+}
+
+.description {
+  max-width: 600px;
+  margin: 30px auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.testimonial {
+  margin-top: 40px;
+  padding: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.testimonial-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f5f0e1;
+  margin-bottom: 15px;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  color: #f5f0e1;
+}
+
+.reader-name {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f5f0e1;
+}
+
+/* === Card Listing Columns === */
+.card-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin: 40px auto;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.column {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.card-list a {
+  color: #f5f0e1;
+  text-decoration: underline;
+}
+
+.card-list a:hover {
+  color: #ffd;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
